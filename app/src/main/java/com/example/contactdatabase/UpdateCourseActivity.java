@@ -12,10 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 public class UpdateCourseActivity extends AppCompatActivity {
 
     // variables for our edit text, button, strings and dbhandler class.
-    private EditText courseNameEdt, courseTracksEdt, courseDurationEdt, courseDescriptionEdt;
-    private Button updateCourseBtn, deleteCourseBtn;
+    private EditText hikeNameEdt, hikeLocationEdt, hikeDateEdt, hikeParkingEdt,hikeLengthEdt,hikeLevelEdt,hikeDescriptionEdt;
+    private Button updateHikeBtn, deleteHikeBtn;
     private DBHandler dbHandler;
-    String courseName, courseDesc, courseDuration, courseTracks;
+    String hikeName, hikeLocation, hikeDate, hikeParking,hikeLength,hikeLevel,hikeDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,38 +23,46 @@ public class UpdateCourseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_update_course);
 
         // initializing all our variables.
-        courseNameEdt = findViewById(R.id.idEdtCourseName);
-        courseTracksEdt = findViewById(R.id.idEdtCourseTracks);
-        courseDurationEdt = findViewById(R.id.idEdtCourseDuration);
-        courseDescriptionEdt = findViewById(R.id.idEdtCourseDescription);
-        updateCourseBtn = findViewById(R.id.idBtnUpdateCourse);
-        deleteCourseBtn = findViewById(R.id.idBtnDelete);
+        hikeNameEdt = findViewById(R.id.idEdtHikeName);
+        hikeLocationEdt = findViewById(R.id.idEdtHikeLocation);
+        hikeDateEdt = findViewById(R.id.idEdtHikeDate);
+        hikeParkingEdt = findViewById(R.id.idEdtHikeParking);
+        hikeLengthEdt = findViewById(R.id.idEdtHikeLength);
+        hikeLevelEdt = findViewById(R.id.idEdtHikeLevel);
+        hikeDescriptionEdt = findViewById(R.id.idEdtHikeDescription);
+        updateHikeBtn = findViewById(R.id.idBtnUpdateHike);
+        deleteHikeBtn = findViewById(R.id.idBtnDelete);
 
         // on below line we are initializing our dbhandler class.
         dbHandler = new DBHandler(UpdateCourseActivity.this);
 
         // on below lines we are getting data which
         // we passed in our adapter class.
-        courseName = getIntent().getStringExtra("name");
-        courseDesc = getIntent().getStringExtra("description");
-        courseDuration = getIntent().getStringExtra("duration");
-        courseTracks = getIntent().getStringExtra("tracks");
-
+        hikeName = getIntent().getStringExtra("name");
+        hikeLocation = getIntent().getStringExtra("location");
+        hikeDate = getIntent().getStringExtra("date");
+        hikeParking = getIntent().getStringExtra("parking");
+        hikeLength = getIntent().getStringExtra("length");
+        hikeLevel = getIntent().getStringExtra("level");
+        hikeDescription = getIntent().getStringExtra("description");
         // setting data to edit text
         // of our update activity.
-        courseNameEdt.setText(courseName);
-        courseDescriptionEdt.setText(courseDesc);
-        courseTracksEdt.setText(courseTracks);
-        courseDurationEdt.setText(courseDuration);
+        hikeNameEdt.setText(hikeName);
+        hikeLocationEdt.setText(hikeLocation);
+        hikeDateEdt.setText(hikeDate);
+        hikeParkingEdt.setText(hikeParking);
+        hikeLengthEdt.setText(hikeLength);
+        hikeLevelEdt.setText(hikeLevel);
+        hikeDescriptionEdt.setText(hikeDescription);
 
         // adding on click listener to our update course button.
-        updateCourseBtn.setOnClickListener(new View.OnClickListener() {
+        updateHikeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 // inside this method we are calling an update course
                 // method and passing all our edit text values.
-                dbHandler.updateCourse(courseName, courseNameEdt.getText().toString(), courseDescriptionEdt.getText().toString(), courseTracksEdt.getText().toString(), courseDurationEdt.getText().toString());
+                dbHandler.updateHike(hikeName, hikeNameEdt.getText().toString(), hikeLocationEdt.getText().toString(), hikeDateEdt.getText().toString(), hikeParkingEdt.getText().toString(),hikeLengthEdt.getText().toString(),hikeLevelEdt.getText().toString(),hikeDescriptionEdt.getText().toString());
 
                 // displaying a toast message that our course has been updated.
                 Toast.makeText(UpdateCourseActivity.this, "Course Updated..", Toast.LENGTH_SHORT).show();
@@ -66,11 +74,11 @@ public class UpdateCourseActivity extends AppCompatActivity {
         });
 
         // adding on click listener for delete button to delete our course.
-        deleteCourseBtn.setOnClickListener(new View.OnClickListener() {
+        deleteHikeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // calling a method to delete our course.
-                dbHandler.deleteCourse(courseName);
+                dbHandler.deleteCourse(hikeName);
                 Toast.makeText(UpdateCourseActivity.this, "Deleted the course", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(UpdateCourseActivity.this, MainActivity.class);
                 startActivity(i);

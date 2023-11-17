@@ -16,11 +16,32 @@
 
         <!--text view for our course name-->
         <TextView
-            android:id="@+id/idTVCourseName"
+            android:id="@+id/idTVHikeName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="3dp"
-            android:text="Course Name"
+            android:text="Name"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/idTVHikeLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Location"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/idTVHikeDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Date"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/idTVHikeParking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Parking"
             android:textColor="@color/black" />
 
         <LinearLayout
@@ -31,30 +52,30 @@
 
             <!--text view for our course tracks-->
             <TextView
-                android:id="@+id/idTVCourseTracks"
+                android:id="@+id/idTVHikeLength"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="3dp"
-                android:text="Course Tracks"
+                android:text="Length"
                 android:textColor="@color/black" />
 
 
             <!--text view for our course duration-->
             <TextView
-                android:id="@+id/idTVCourseDuration"
+                android:id="@+id/idTVHikeLevel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="3dp"
-                android:text="Duration"
+                android:text="Level"
                 android:textColor="@color/black" />
 
         </LinearLayout>
 
         <!--text view for our course description-->
         <TextView
-            android:id="@+id/idTVCourseDescription"
+            android:id="@+id/idTVHikeDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

@@ -38,10 +38,14 @@ public class CourseRVAdapter extends RecyclerView.Adapter<CourseRVAdapter.ViewHo
         // on below line we are setting data
         // to our views of recycler view item.
         CourseModal modal = courseModalArrayList.get(position);
-        holder.courseNameTV.setText(modal.getCourseName());
-        holder.courseDescTV.setText(modal.getCourseDescription());
-        holder.courseDurationTV.setText(modal.getCourseDuration());
-        holder.courseTracksTV.setText(modal.getCourseTracks());
+        holder.hikeNameTV.setText(modal.getHikeName());
+        holder.hikeLocationTV.setText(modal.getHikeLocation());
+        holder.hikeDateTV.setText(modal.getHikeDate());
+        holder.hikeParingTV.setText(modal.getHikeParking());
+        holder.hikeLengthTV.setText(modal.getHikeLength());
+        holder.hikeLevelTV.setText(modal.getHikeLevel());
+        holder.hikeDescriptionTV.setText(modal.getHikeDescription());
+
 
         // below line is to add on click listener for our recycler view item.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -52,10 +56,14 @@ public class CourseRVAdapter extends RecyclerView.Adapter<CourseRVAdapter.ViewHo
                 Intent i = new Intent(context, UpdateCourseActivity.class);
 
                 // below we are passing all our values.
-                i.putExtra("name", modal.getCourseName());
-                i.putExtra("description", modal.getCourseDescription());
-                i.putExtra("duration", modal.getCourseDuration());
-                i.putExtra("tracks", modal.getCourseTracks());
+                i.putExtra("name", modal.getHikeName());
+                i.putExtra("location", modal.getHikeLocation());
+                i.putExtra("date", modal.getHikeDate());
+                i.putExtra("parking", modal.getHikeParking());
+                i.putExtra("length", modal.getHikeLength());
+                i.putExtra("level", modal.getHikeLevel());
+                i.putExtra("description", modal.getHikeDescription());
+
 
                 // starting our activity.
                 context.startActivity(i);
@@ -72,15 +80,18 @@ public class CourseRVAdapter extends RecyclerView.Adapter<CourseRVAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         // creating variables for our text views.
-        private TextView courseNameTV, courseDescTV, courseDurationTV, courseTracksTV;
+        private TextView hikeNameTV, hikeLocationTV, hikeDateTV, hikeParingTV,hikeLengthTV,hikeLevelTV,hikeDescriptionTV;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             // initializing our text views
-            courseNameTV = itemView.findViewById(R.id.idTVCourseName);
-            courseDescTV = itemView.findViewById(R.id.idTVCourseDescription);
-            courseDurationTV = itemView.findViewById(R.id.idTVCourseDuration);
-            courseTracksTV = itemView.findViewById(R.id.idTVCourseTracks);
+            hikeNameTV = itemView.findViewById(R.id.idTVHikeName);
+            hikeLocationTV = itemView.findViewById(R.id.idTVHikeLocation);
+            hikeDateTV = itemView.findViewById(R.id.idTVHikeDate);
+            hikeParingTV = itemView.findViewById(R.id.idTVHikeParking);
+            hikeLengthTV = itemView.findViewById(R.id.idTVHikeLength);
+            hikeLevelTV = itemView.findViewById(R.id.idTVHikeLevel);
+            hikeDescriptionTV = itemView.findViewById(R.id.idTVHikeDescription);
         }
     }
 }

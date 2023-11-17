@@ -12,13 +12,13 @@ public class DBHandler extends SQLiteOpenHelper {
 
     // creating a constant variables for our database.
     // below variable is for our database name.
-    private static final String DB_NAME = "coursedb";
+    private static final String DB_NAME = "hikesGrw";
 
     // below int is our database version
     private static final int DB_VERSION = 1;
 
     // below variable is for our table name.
-    private static final String TABLE_NAME = "mycourses";
+    private static final String TABLE_NAME = "hikes";
 
     // below variable is for our id column.
     private static final String ID_COL = "id";
@@ -27,14 +27,15 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String NAME_COL = "name";
 
     // below variable id for our course duration column.
-    private static final String DURATION_COL = "duration";
+    private static final String LOCATION_COL = "location";
 
     // below variable for our course description column.
-    private static final String DESCRIPTION_COL = "description";
-
+    private static final String DATE_COL = "date";
     // below variable is for our course tracks column.
-    private static final String TRACKS_COL = "tracks";
-
+    private static final String PARKING_COL = "packing";
+    private static final String LENGTH_COL = "length";
+    private static final String LEVEL_COL = "level";
+    private static final String DESCRIPTION_COL = "description";
     // creating a constructor for our database handler.
     public DBHandler(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -50,9 +51,13 @@ public class DBHandler extends SQLiteOpenHelper {
         String query = "CREATE TABLE " + TABLE_NAME + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + NAME_COL + " TEXT,"
-                + DURATION_COL + " TEXT,"
-                + DESCRIPTION_COL + " TEXT,"
-                + TRACKS_COL + " TEXT)";
+                + LOCATION_COL + " TEXT,"
+                + DATE_COL + " TEXT,"
+                + PARKING_COL + " TEXT,"
+                + LENGTH_COL + " TEXT,"
+                + LEVEL_COL + " TEXT,"
+                + DESCRIPTION_COL + " TEXT)";
+
 
         // at last we are calling a exec sql
         // method to execute above sql query
@@ -60,7 +65,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     // this method is use to add new course to our sqlite database.
-    public void addNewCourse(String courseName, String courseDuration, String courseDescription, String courseTracks) {
+    public void addNewHike(String hikeName, String hikeLocation,String hikeDate,String hikeParking,String hikeLength,String hikeLevel, String courseDescription) {
 
         // on below line we are creating a variable for
         // our sqlite database and calling writable method
@@ -73,10 +78,13 @@ public class DBHandler extends SQLiteOpenHelper {
 
         // on below line we are passing all values
         // along with its key and value pair.
-        values.put(NAME_COL, courseName);
-        values.put(DURATION_COL, courseDuration);
+        values.put(NAME_COL, hikeName);
+        values.put(LOCATION_COL, hikeLocation);
+        values.put(DATE_COL, hikeDate);
+        values.put(PARKING_COL, hikeParking);
+        values.put(LENGTH_COL, hikeLength);
+        values.put(LEVEL_COL, hikeLevel);
         values.put(DESCRIPTION_COL, courseDescription);
-        values.put(TRACKS_COL, courseTracks);
 
         // after adding all values we are passing
         // content values to our table.
@@ -106,6 +114,9 @@ public class DBHandler extends SQLiteOpenHelper {
                 courseModalArrayList.add(new CourseModal(cursorCourses.getString(1),
                         cursorCourses.getString(4),
                         cursorCourses.getString(2),
+                        cursorCourses.getString(5),
+                        cursorCourses.getString(6),
+                        cursorCourses.getString(7),
                         cursorCourses.getString(3)));
             } while (cursorCourses.moveToNext());
             // moving our cursor to next.
@@ -117,8 +128,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     // below is the method for updating our courses
-    public void updateCourse(String originalCourseName, String courseName, String courseDescription,
-                             String courseTracks, String courseDuration) {
+    public void updateHike(String originalCourseName,String hikeName, String hikeLocation,String hikeDate,String hikeParking,String hikeLength,String hikeLevel, String courseDescription) {
 
         // calling a method to get writable database.
         SQLiteDatabase db = this.getWritableDatabase();
@@ -126,10 +136,13 @@ public class DBHandler extends SQLiteOpenHelper {
 
         // on below line we are passing all values
         // along with its key and value pair.
-        values.put(NAME_COL, courseName);
-        values.put(DURATION_COL, courseDuration);
+        values.put(NAME_COL, hikeName);
+        values.put(LOCATION_COL, hikeLocation);
+        values.put(DATE_COL, hikeDate);
+        values.put(PARKING_COL, hikeParking);
+        values.put(LENGTH_COL, hikeLength);
+        values.put(LEVEL_COL, hikeLevel);
         values.put(DESCRIPTION_COL, courseDescription);
-        values.put(TRACKS_COL, courseTracks);
 
         // on below line we are calling a update method to update our database and passing our values.
         // and we are comparing it with name of our course which is stored in original name variable.

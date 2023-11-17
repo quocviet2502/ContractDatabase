@@ -9,43 +9,59 @@
 
     <!--Edit text to enter course name-->
     <EditText
-        android:id="@+id/idEdtCourseName"
+        android:id="@+id/idEdtHikeName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Enter course Name" />
+        android:hint="Enter Name" />
 
     <!--edit text to enter course duration-->
     <EditText
-        android:id="@+id/idEdtCourseDuration"
+        android:id="@+id/idEdtHikeLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Enter Course Duration" />
-
-    <!--edit text to display course tracks-->
+        android:hint="Enter Location" />
     <EditText
-        android:id="@+id/idEdtCourseTracks"
+        android:id="@+id/idEdtHikeDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Enter Course Tracks" />
+        android:hint="Enter Date" />
+    <EditText
+        android:id="@+id/idEdtHikeParking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter Parking" />
+    <EditText
+        android:id="@+id/idEdtHikeLength"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter Length" />
+    <EditText
+        android:id="@+id/idEdtHikeLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter Level" />
 
     <!--edit text for course description-->
     <EditText
-        android:id="@+id/idEdtCourseDescription"
+        android:id="@+id/idEdtHikeDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Enter Course Description" />
+        android:hint="Enter Description" />
 
     <!--button for updating our course-->
     <Button
-        android:id="@+id/idBtnUpdateCourse"
+        android:id="@+id/idBtnUpdateHike"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Update Course"
+        android:text="Update Hike"
         android:textAllCaps="false" />
 
     <!--button for deleting our course-->
@@ -54,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Delete Course"
+        android:text="Delete Hike"
         android:textAllCaps="false" />
 
 </LinearLayout>

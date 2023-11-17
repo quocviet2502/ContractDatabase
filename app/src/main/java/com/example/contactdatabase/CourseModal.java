@@ -4,46 +4,68 @@ public class CourseModal {
 
     // variables for our coursename,
     // description, tracks and duration, id.
-    private String courseName;
-    private String courseDuration;
-    private String courseTracks;
-    private String courseDescription;
+    private String hikeName;
+    private String hikeLocation;
+    private String hikeDate;
+    private String hikeParking;
+    private String hikeLength;
+    private String hikeLevel;
+
+    private String hikeDescription;
     private int id;
 
     // creating getter and setter methods
-    public String getCourseName() { return courseName; }
+    public String getHikeName() { return hikeName; }
 
-    public void setCourseName(String courseName)
+    public void setHikeName(String courseName)
     {
-        this.courseName = courseName;
+        this.hikeName = hikeName;
     }
 
-    public String getCourseDuration()
+    public String getHikeLocation()
     {
-        return courseDuration;
+        return hikeLocation;
     }
 
-    public void setCourseDuration(String courseDuration)
+    public void setHikeLocation(String courseDuration)
     {
-        this.courseDuration = courseDuration;
+        this.hikeLocation = hikeLocation;
     }
 
-    public String getCourseTracks() { return courseTracks; }
+    public String getHikeDate() { return hikeDate; }
 
-    public void setCourseTracks(String courseTracks)
+    public void setHikeDate(String courseTracks)
     {
-        this.courseTracks = courseTracks;
+        this.hikeDate = hikeDate;
+    }
+    public String getHikeParking() { return hikeParking; }
+
+    public void setHikeParking(String hikeParking)
+    {
+        this.hikeParking = hikeParking;
+    }
+    public String getHikeLength() { return hikeLength; }
+
+    public void setHikeLength(String hikeLength)
+    {
+        this.hikeLength = hikeLength;
+    }
+    public String getHikeLevel() { return hikeLevel; }
+
+    public void setHikeLevel(String hikeLevel)
+    {
+        this.hikeLevel = hikeLevel;
     }
 
-    public String getCourseDescription()
+    public String getHikeDescription()
     {
-        return courseDescription;
+        return hikeDescription;
     }
 
     public void
-    setCourseDescription(String courseDescription)
+    setHikeDescription(String hikeDescription)
     {
-        this.courseDescription = courseDescription;
+        this.hikeDescription = hikeDescription;
     }
 
     public int getId() { return id; }
@@ -51,14 +73,20 @@ public class CourseModal {
     public void setId(int id) { this.id = id; }
 
     // constructor
-    public CourseModal(String courseName,
-                       String courseDuration,
-                       String courseTracks,
-                       String courseDescription)
+    public CourseModal(String hikeName,
+                       String hikeLocation,
+                       String hikeDate,
+                       String hikeParking,
+                       String hikeLength,
+                       String hikeLevel,
+                       String hikeDescription)
     {
-        this.courseName = courseName;
-        this.courseDuration = courseDuration;
-        this.courseTracks = courseTracks;
-        this.courseDescription = courseDescription;
+        this.hikeName = hikeName;
+        this.hikeLocation = hikeLocation;
+        this.hikeDate = hikeDate;
+        this.hikeParking = hikeParking;
+        this.hikeLength = hikeLength;
+        this.hikeLevel = hikeLevel;
+        this.hikeDescription = hikeDescription;
     }
 }
